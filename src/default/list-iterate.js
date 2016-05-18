@@ -2,11 +2,18 @@ import React from 'react';
 import benchmark from '../benchmark';
 import {list, onClick} from '../fixtures';
 
+import Iterate from '../iterate';
+
+const renderItem = (item, props, index) => (
+  <li key={index} onClick={props.badProps ? () => onClick('Bad', index) : onClick}>{item}</li>
+);
 
 benchmark(badProps => (
-  <ul>
-    {list.map((item, index) => (
-      <li key={index} onClick={badProps ? () => onClick() : onClick}>{item}</li>
-    ))}
-  </ul>
+  <Iterate
+    root="ul"
+    rootProps={{ className: 'hello-world' }}
+    items={list}
+    children={renderItem}
+    badProps={badProps}
+  />
 ));

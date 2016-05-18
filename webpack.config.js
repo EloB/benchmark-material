@@ -6,8 +6,8 @@ var tests = require('./src/config').tests;
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  context: __dirname,
-  devtool: 'source-map',
+  // context: __dirname,
+  // devtool: 'source-map',
   entry: tests.reduce((obj, test) => {
     obj[test.name] = test.entry;
     return obj;

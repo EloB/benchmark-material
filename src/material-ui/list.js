@@ -9,7 +9,7 @@ benchmark(badProps => (
   <MuiBoilerplate>
     <List>
       {list.map((item, index) => (
-        <ListItem key={index} onTouchTap={badProps ? () => onClick(null, 'Test', index) : onClick} primaryText={item} />
+        <ListItem key={index} onTouchTap={badProps ? () => onClick('Bad', index) : onClick} primaryText={item} />
       ))}
     </List>
   </MuiBoilerplate>

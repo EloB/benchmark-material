@@ -15,9 +15,8 @@ module.exports = {
     index: './src/index'
   }),
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].js',
-    publicPath: '/'
+    path: path.join(__dirname, 'build'),
+    filename: 'dist/[name].js'
   },
   module: {
     loaders: [
@@ -55,7 +54,7 @@ module.exports = {
       template: require('html-webpack-template'),
       appMountId: 'container'
     }),
-    new ExtractTextPlugin('[name].css', { allChunks: true }),
+    new ExtractTextPlugin('dist/[name].css', { allChunks: true }),
     new webpack.DefinePlugin({
       process: {
         env: {

@@ -3,9 +3,10 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --hot --inline",
-    "clean": "rimraf dist/",
+    "clean": "rimraf build",
     "build": "NODE_ENV=production webpack --optimize-minimize",
-    "serve": "serve dist/"
+    "serve": "serve build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
@@ -17,6 +18,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "gh-pages": "^0.11.0",
     "html-webpack-plugin": "^2.17.0",
     "html-webpack-template": "^5.0.0",
     "material-ui": "^0.15.0",

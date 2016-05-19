@@ -13,7 +13,7 @@ addEventListener('load', () => {
             <h1>{framework}</h1>
             <ul>
               {components.map((component, index) => (
-                <li key={component}><a href={`/${framework}/${component}.html`}>{component}</a></li>
+                <li key={component}><a href={`${framework}/${component}.html`}>{component}</a></li>
               ))}
             </ul>
           </div>
